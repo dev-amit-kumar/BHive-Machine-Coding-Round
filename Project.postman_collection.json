@@ -1,0 +1,715 @@
+{
+	"info": {
+		"_postman_id": "8732bf0e-faa0-4037-8938-2af7753cda07",
+		"name": "BirlaSunLifeMutualFund_MF",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16516009"
+	},
+	"item": [
+		{
+			"name": "Check Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/health",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "health",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/health",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-0gLkFtFs66seenVbypMESpruDBA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 06:36:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"msg\": \"Health check is ok\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Auth: Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"amit123@gmai.com\",\n    \"password\": \"test@12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User created",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"amit123@gmai.com\",\n    \"password\": \"test@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24-V/EvZ5lof2HEgU4QPg6KhGARkgU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 07:59:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"message\": \"user registered\"\n}"
+				},
+				{
+					"name": "user already exist",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"amit123@gmai.com\",\n    \"password\": \"test@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-lFUySNKwX3L5eGEwGcNcUoVKWhE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 08:00:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"User already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Auth: Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"amit123@gmai.com\",\n    \"password\": \"test@123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successfully login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"amit123@gmai.com\",\n    \"password\": \"test@12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9b-NFaR+9pCEKNrHwKKTsPBefDGg4Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 17:43:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTczNDgwMjk5NywiZXhwIjoxNzM0ODA2NTk3fQ.VDMnH5-gNsbEbVC-velA3oyZL-aHaXwq34PYvatYE0o\"\n}"
+				},
+				{
+					"name": "Invalid credentials",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"amit123@gmai.com\",\n    \"password\": \"test@123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-mRYQ6Yx/raK/ssDeWseqQCiH0yM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 17:43:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid credentials\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Portfolio: Get",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/portfolio",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"portfolio"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/portfolio",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"portfolio"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "414"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19e-oZXbgzZoFiR5l+UQoCuQvjMPAMk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 17:44:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"portfolio\": [\n        {\n            \"id\": 3,\n            \"userId\": \"2\",\n            \"mutualFundId\": \"71\",\n            \"amount\": 4,\n            \"created_at\": \"2024-12-21T17:41:36.034Z\",\n            \"updated_at\": \"2024-12-21T17:41:36.034Z\"\n        },\n        {\n            \"id\": 4,\n            \"userId\": \"2\",\n            \"mutualFundId\": \"74\",\n            \"amount\": 4,\n            \"created_at\": \"2024-12-21T17:42:25.561Z\",\n            \"updated_at\": \"2024-12-21T17:42:25.561Z\"\n        },\n        {\n            \"id\": 5,\n            \"userId\": \"2\",\n            \"mutualFundId\": \"80\",\n            \"amount\": 4,\n            \"created_at\": \"2024-12-21T17:42:30.185Z\",\n            \"updated_at\": \"2024-12-21T17:42:30.185Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Portfolio: Add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mutualFundId\": 80,\n    \"amount\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/portfolio/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"portfolio",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successfully added portfolio",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mutualFundId\": 71,\n    \"amount\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/portfolio/add",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"portfolio",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-evxs4IlqoO+VU+15wtmLK0awb+4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 08:09:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully added portfolio\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Mutual Fund: Get All Family",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/mutual-fund/family",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"mutual-fund",
+						"family"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Family",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/mutual-fund/family",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"mutual-fund",
+								"family"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "434"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b2-92FgRtKe927yJQcjJgZ1i5V/vLU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 17:45:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"familyList\": [\n        \"BirlaSunLifeMutualFund_MF\",\n        \"HDFCMutualFund_MF\",\n        \"ICICIPrudentialMutualFund_MF\",\n        \"SBIMutualFund_MF\",\n        \"TATAMutualFund_MF\",\n        \"BANDHANMUTUALFUND_MF\",\n        \"DSP_MF\",\n        \"KOTAKMAHINDRAMF\",\n        \"FRANKLINTEMPLETON\",\n        \"HSBCMUTUALFUND_MF\",\n        \"360_ONE_MUTUALFUND_MF\",\n        \"NAVIMUTUALFUND_MF\",\n        \"SHRIRAMMUTUALFUND_MF\",\n        \"PPFAS_MF\",\n        \"MAHINDRA MANULIFE MUTUAL FUND_MF\",\n        \"UNIONMUTUALFUND_MF\",\n        \"WHITEOAKCAPITALMUTUALFUND_MF\",\n        \"HELIOSMUTUALFUND_MF\",\n        \"ZERODHAMUTUALFUND_MF\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Mutual Fund: Get All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/mutual-fund",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"mutual-fund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mutual Fund: Get By AMC_Code",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/mutual-fund?AMC_Code=BirlaSunLifeMutualFund_MF",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"mutual-fund"
+					],
+					"query": [
+						{
+							"key": "AMC_Code",
+							"value": "BirlaSunLifeMutualFund_MF",
+							"description": "AMC_Code corresponds to MF family"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

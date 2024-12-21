@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { getFunds } from '../controllers/mutualFundController.js';
+import mutualFundController from '../controllers/mutualFundController.js';
 
 const router = Router();
 
-router.get('/', getFunds);
+router.get('/', mutualFundController.getFunds);
+router.get('/family', mutualFundController.getFamilies);
 
 export default router;

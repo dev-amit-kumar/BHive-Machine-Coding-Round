@@ -1,5 +1,3 @@
-import router from "./routes/portfolioRoutes.js";
+import router from './routes/portfolioRoutes.js';
 
-export {
-    router
-}
+export { router };

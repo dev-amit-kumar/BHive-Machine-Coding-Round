@@ -10,9 +10,9 @@ app.use('/auth', authRoutes);
 app.use('/portfolio', authMiddleware, portfolioRoutes);
 app.use('/mutual-fund', authMiddleware, mutualFundRoutes);
 app.get('/health', (_req, res) => {
-    res.status(200).json({ msg: "Health check is ok" });
+  res.status(200).json({ msg: 'Health check is ok' });
 });
 
 app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+  console.log('Server is running on port 3000');
 });

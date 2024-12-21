@@ -1,5 +1,3 @@
-import router from "./routes/mutualFundRoutes.js";
+import router from './routes/mutualFundRoutes.js';
 
-export {
-    router
-}
+export { router };
